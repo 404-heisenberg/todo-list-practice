@@ -1,0 +1,15 @@
+body {
+    height: 100vh;
+    margin: 0 auto;
+    padding: clamp(15px, 3em, 20px);
+    width: clamp(250px, 60%, 500px);
+    text-align: center;
+}
+
+#content {
+}
+
+#task-list {
+    list-style: none;
+    text-align: left;
+}
