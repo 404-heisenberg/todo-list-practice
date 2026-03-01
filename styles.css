@@ -12,4 +12,18 @@ body {
 #task-list {
     list-style: none;
     text-align: left;
+
+    li:hover {
+        cursor: pointer;
+        font-weight: 700;
+    }
+
+    li#completed {
+        color: green;
+    }
+
+    li#cancelled {
+        color: red;
+        text-decoration: line-through;
+    }
 }
