@@ -11,7 +11,7 @@ class Task {
   constructor(taskText) {
     this.text = taskText;
     this.completed = false;
-    this.canceled = false;
+    this.cancelled = false;
     this.removed = false;
   }
 }
@@ -52,11 +52,21 @@ function handleTasks(e) {
     case "click":
       task.completed = !task.completed;
       target.classList.toggle("completed");
+
+      // can't complete cancelled tasks
+      if (target.classList.contains("cancelled")) {
+        target.classList.remove("completed");
+      }
       break;
     case "contextmenu":
       e.preventDefault();
-      task.canceled = !task.canceled;
+      task.cancelled = !task.cancelled;
       target.classList.toggle("cancelled");
+
+      // can't cancel completed tasks
+      if (target.classList.contains("completed")) {
+        target.classList.remove("cancelled");
+      }
       break;
   }
 }
