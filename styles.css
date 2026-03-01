@@ -1,33 +1,112 @@
+@font-face {
+    font-family: "Quicksand";
+    src: url("./fonts/Quicksand/Quicksand-VariableFont_wght.ttf")
+        format("truetype");
+    font-weight: 300 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Lora";
+    src: url("./fonts/Lora/Lora-VariableFont_wght.ttf") format("truetype");
+    font-weight: 400 700;
+    font-style: normal;
+    font-display: swap;
+}
+
 body {
     height: 100vh;
     margin: 0 auto;
     padding: clamp(15px, 3em, 20px);
-    width: clamp(250px, 60%, 500px);
+    width: clamp(250px, 50%, 900px);
     text-align: center;
 }
 
-#content {
+h1 {
+    font-family: "Lora", sans-serif;
+    font-size: clamp(32px, 3.5rem, 48px);
+}
+
+#task-form {
+    display: flex;
+    justify-content: center;
+}
+
+#taskSection {
+    width: 60%;
+    padding: 0.25em;
+    border: 3px solid black;
+    border-radius: 10px;
+}
+
+#inputTask {
+    font-family: "Quicksand", sans;
+    font-size: clamp(16px, 1.25rem, 21px);
+    font-weight: regular;
+    border: none;
+    width: 90%;
+    padding: 0px;
+}
+
+#btnCreateTask {
+    border: none;
+    background-color: black;
+    border-radius: 5px;
+}
+
+#btnCreateTask img {
+    width: 20px;
+    margin-left: 5px;
+    padding: 0px;
+}
+
+#btnCreateTask img:hover {
+    cursor: pointer;
 }
 
 #task-list {
     list-style: none;
     text-align: left;
+    padding-left: 0px;
 }
 
 #task-list li {
     user-select: none;
 }
 
-#task-list li:hover {
+li {
+    padding: 0.8em;
+    border-bottom: 2px solid grey;
+    display: flex;
+    gap: 10px;
+}
+
+li:last-child {
+    border-bottom: none;
+}
+
+li span {
+    font-family: "Quicksand", sans;
+    font-size: clamp(16px, 1.25rem, 21px);
+    font-weight: regular;
+}
+
+li img {
+    width: 25px;
+}
+
+li button {
+    border: none;
+    background-color: transparent;
+    padding: 0px;
+    margin: 0px;
+}
+
+li button:hover {
     cursor: pointer;
-    font-weight: 700;
 }
 
-#task-list li.completed {
-    color: green;
-}
-
-#task-list li.cancelled {
-    color: red;
-    text-decoration: line-through;
+li .delete-btn {
+    margin-left: auto;
 }

@@ -49,6 +49,7 @@ function handleTasks(e) {
   if (!task) return;
 
   switch (e.type) {
+    // left clicking a task should mark it as completed
     case "click":
       task.completed = !task.completed;
       target.classList.toggle("completed");
@@ -58,6 +59,7 @@ function handleTasks(e) {
         target.classList.remove("completed");
       }
       break;
+    // right clicking a task should cancel it
     case "contextmenu":
       e.preventDefault();
       task.cancelled = !task.cancelled;
@@ -74,6 +76,4 @@ function handleTasks(e) {
 taskList.addEventListener("click", handleTasks);
 taskList.addEventListener("contextmenu", handleTasks);
 
-// left clicking a task should mark it as completed
-
-// right clicking a task should cancel it
+// TODO: add buttons to delete tasks
