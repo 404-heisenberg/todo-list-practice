@@ -12,18 +12,22 @@ body {
 #task-list {
     list-style: none;
     text-align: left;
+}
 
-    li:hover {
-        cursor: pointer;
-        font-weight: 700;
-    }
+#task-list li {
+    user-select: none;
+}
 
-    li#completed {
-        color: green;
-    }
+#task-list li:hover {
+    cursor: pointer;
+    font-weight: 700;
+}
 
-    li#cancelled {
-        color: red;
-        text-decoration: line-through;
-    }
+#task-list li.completed {
+    color: green;
+}
+
+#task-list li.cancelled {
+    color: red;
+    text-decoration: line-through;
 }
