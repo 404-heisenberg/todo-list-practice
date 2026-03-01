@@ -1,4 +1,4 @@
-"use strict"
+"use strict";
 
 let taskInput = document.getElementById("inputTask");
 let createTaskBtn = document.getElementById("btnCreateTask");
@@ -7,10 +7,6 @@ let taskForm = document.getElementById("task-form");
 
 let tasks = [];
 
-tempTasks = document.querySelectorAll("#task-list li");
-
-tempTasks.forEach((task) => tasks.push(new Task(task.textContent)));
-
 class Task {
   constructor(taskText) {
     this.Task = taskText;
@@ -18,12 +14,10 @@ class Task {
     this.canceled = false;
     this.removed = false;
   }
-
-  get completed() {
-    return this._completed;
-  }
-
 }
+
+const tempTasks = document.querySelectorAll("#task-list li");
+tempTasks.forEach((task) => tasks.push(new Task(task.textContent.trim())));
 
 // when the create task button is clicked, add the task to the list
 function addTask(event) {
@@ -46,8 +40,6 @@ function addTask(event) {
 }
 
 taskForm.addEventListener("submit", addTask);
-
-function
 
 // left clicking a task should mark it as completed
 
