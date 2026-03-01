@@ -9,7 +9,7 @@ let tasks = [];
 
 class Task {
   constructor(taskText) {
-    this.Task = taskText;
+    this.text = taskText;
     this.completed = false;
     this.canceled = false;
     this.removed = false;
@@ -40,6 +40,29 @@ function addTask(event) {
 }
 
 taskForm.addEventListener("submit", addTask);
+
+function handleTasks(e) {
+  let target = e.target.closest("li");
+  if (!target) return;
+
+  let task = tasks.find((t) => t.text === target.textContent.trim());
+  if (!task) return;
+
+  switch (e.type) {
+    case "click":
+      task.completed = !task.completed;
+      target.classList.toggle("completed");
+      break;
+    case "contextmenu":
+      e.preventDefault();
+      task.canceled = !task.canceled;
+      target.classList.toggle("cancelled");
+      break;
+  }
+}
+
+taskList.addEventListener("click", handleTasks);
+taskList.addEventListener("contextmenu", handleTasks);
 
 // left clicking a task should mark it as completed
 
