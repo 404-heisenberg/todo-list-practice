@@ -1,3 +1,5 @@
+"use strict"
+
 let taskInput = document.getElementById("inputTask");
 let createTaskBtn = document.getElementById("btnCreateTask");
 let taskList = document.getElementById("task-list");
@@ -5,11 +7,22 @@ let taskForm = document.getElementById("task-form");
 
 let tasks = [];
 
-function Task(taskText) {
-  this.Task = taskText;
-  this.completed = false;
-  this.canceled = false;
-  this.removed = false;
+tempTasks = document.querySelectorAll("#task-list li");
+
+tempTasks.forEach((task) => tasks.push(new Task(task.textContent)));
+
+class Task {
+  constructor(taskText) {
+    this.Task = taskText;
+    this.completed = false;
+    this.canceled = false;
+    this.removed = false;
+  }
+
+  get completed() {
+    return this._completed;
+  }
+
 }
 
 // when the create task button is clicked, add the task to the list
@@ -33,3 +46,9 @@ function addTask(event) {
 }
 
 taskForm.addEventListener("submit", addTask);
+
+function
+
+// left clicking a task should mark it as completed
+
+// right clicking a task should cancel it
