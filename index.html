@@ -13,50 +13,13 @@
                 <section id="taskSection">
                     <input
                         type="text"
-                        id="inputTask"
+                        id="task-input"
                         placeholder="Start writing and press enter to add a task"
                     />
                 </section>
             </form>
-            <ul id="task-list">
-                <li>
-                    <button
-                        type="button"
-                        class="toggle-btn"
-                        aria-label="Mark as completed"
-                    >
-                        <img src="images/checkbox.svg" alt="" />
-                    </button>
-                    <span class="task-text">
-                        left click to mark as completed
-                    </span>
-                    <button
-                        type="button"
-                        class="delete-btn"
-                        aria-label="Delete task"
-                    >
-                        <img src="images/trash.svg" alt="" />
-                    </button>
-                </li>
-                <li>
-                    <button
-                        type="button"
-                        class="toggle_btn"
-                        aria-label="Mark as completed"
-                    >
-                        <img src="images/checkbox.svg" alt="" />
-                    </button>
-                    <span class="task-text">right click to cancel</span>
-                    <button
-                        type="button"
-                        class="delete-btn"
-                        aria-label="Delete task"
-                    >
-                        <img src="images/trash.svg" alt="" />
-                    </button>
-                </li>
-            </ul>
-            <script src="script.js"></script>
+            <ul id="task-list"></ul>
+            <script src="state.js"></script>
         </main>
     </body>
 </html>
