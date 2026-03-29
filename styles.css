@@ -60,7 +60,7 @@ h1 {
     padding: 0px;
 }
 
-#btnCreateTask img:hover {
+#add-task-btn img:hover {
     cursor: pointer;
 }
 
