@@ -49,13 +49,12 @@ h1 {
     padding: 0px;
 }
 
-#btnCreateTask {
+#add-task-btn {
     border: none;
-    background-color: black;
     border-radius: 5px;
 }
 
-#btnCreateTask img {
+#add-task-btn img {
     width: 20px;
     margin-left: 5px;
     padding: 0px;
