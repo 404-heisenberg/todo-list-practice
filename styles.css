@@ -1,8 +1,12 @@
 :root {
-    --bg-colour: #f8f3d9;
-    --text-colour: #504b38;
-    --border-colour: rgb(80, 75, 56);
-    --box-shadow-colour: rgb(80, 75, 56);
+    --bg-colour: #fef6e4;
+    --btn-bg-colour: #f582ae;
+    --btn-text-colour: #001858;
+    --text-colour: #172c66;
+    --border-colour: #001858;
+    --box-shadow-colour: #001858;
+    --seconday-colour: #8bd3dd;
+    --main-colour: #f3d2c1;
 }
 
 @font-face {
@@ -35,7 +39,10 @@ body {
 h1 {
     font-family: "Lora", sans-serif;
     font-size: clamp(32px, 3.5rem, 48px);
+    color: #001858;
 }
+
+/*Text Section*/
 
 #task-form {
     display: flex;
@@ -43,8 +50,9 @@ h1 {
 }
 
 #taskSection {
+    display: flex;
+    overflow: hidden;
     width: 50%;
-    padding: 0.45em;
     border: 3px solid var(--border-colour);
     border-radius: 10px;
     box-shadow: 5px 6px var(--box-shadow-colour);
@@ -55,37 +63,42 @@ h1 {
 
 #taskSection:hover {
     transform: translateY(-1px);
-    box-shadow: 7px 8px 0.5px rgb(80, 75, 56, 0.95);
+    box-shadow: 7px 8px 0.6px rgb(0, 24, 88, 0.95);
 }
 
-#task-input {
+#task-input,
+#add-task-btn {
     font-family: "Quicksand", sans;
     font-size: clamp(16px, 1.25rem, 21px);
     font-weight: regular;
     border: none;
-    width: 70%;
-    padding: 0px;
     background-color: var(--bg-colour);
+    padding: 0.4em 0;
 }
 
-#task-input:focus {
+#task-input {
+    flex: 1;
+    text-align: center;
+    width: auto;
+    color: var(--btn-text-colour);
+}
+
+#task-input:focus,
+#add-task-btn:focus {
     outline: none;
 }
 
 #add-task-btn {
-    border: none;
-    border-radius: 5px;
-    background-color: var(--bg-colour);
+    width: 120px;
+    border-left: 3px solid var(--border-colour);
+    text-align: center;
+    background-color: var(--btn-bg-colour);
+    color: var(--text-colour);
 }
 
-#add-task-btn img {
-    width: 22px;
-    margin-left: 5px;
-    padding: 0px;
-}
-
-#add-task-btn img:hover {
+#add-task-btn:hover {
     cursor: pointer;
+    font-weight: 700;
 }
 
 #task-list {
