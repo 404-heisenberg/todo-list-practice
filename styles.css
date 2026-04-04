@@ -56,7 +56,6 @@ h1 {
 #taskSection:hover {
     transform: translateY(-1px);
     box-shadow: 7px 8px rgb(80, 75, 56, 0.95);
-    cursor: pointer;
 }
 
 #task-input {
