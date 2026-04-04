@@ -42,7 +42,7 @@ h1 {
     color: #001858;
 }
 
-/*Text Section*/
+/*Task Input Section*/
 
 #task-form {
     display: flex;
@@ -53,6 +53,7 @@ h1 {
     display: flex;
     overflow: hidden;
     width: 50%;
+    margin-bottom: 1em;
     border: 3px solid var(--border-colour);
     border-radius: 10px;
     box-shadow: 5px 6px var(--box-shadow-colour);
@@ -101,25 +102,44 @@ h1 {
     font-weight: 700;
 }
 
+/*Task List Section*/
+
 #task-list {
     list-style: none;
     text-align: left;
-    padding-left: 0px;
-}
-
-#task-list li {
-    user-select: none;
+    padding: 1em 2em;
+    background-color: var(--main-colour);
+    border: 3px solid var(--border-colour);
+    border-radius: 10px;
+    box-shadow: 5px 6px var(--box-shadow-colour);
 }
 
 li {
+    user-select: none;
     padding: 0.8em;
-    border-bottom: 2px solid grey;
+    margin: 1.5em auto;
     display: flex;
     gap: 10px;
+    background-color: var(--bg-colour);
+    border: 3px solid var(--border-colour);
+    border-radius: 10px;
+    box-shadow: 5px 6px var(--box-shadow-colour);
+    transition:
+        box-shadow 220ms ease,
+        transform 220ms ease,
+        background-color 300ms ease-out,
+        text-decoration 300ms ease-out;
 }
 
-li:last-child {
-    border-bottom: none;
+li:hover {
+    transform: translateY(-1px);
+    box-shadow: 7px 8px 0.6px rgb(0, 24, 88, 0.95);
+}
+
+li.completed,
+li.completed button {
+    text-decoration: line-through;
+    background-color: var(--seconday-colour);
 }
 
 li span {
@@ -134,9 +154,12 @@ li img {
 
 li button {
     border: none;
-    background-color: transparent;
+    background-color: var(--bg-colour);
     padding: 0px;
     margin: 0px;
+    transition:
+        background-color 300ms ease-out,
+        text-decoration 300ms ease-out;
 }
 
 li button:hover {
