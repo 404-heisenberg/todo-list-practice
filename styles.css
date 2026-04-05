@@ -180,8 +180,7 @@ li .delete-btn {
 
 @media (max-width: 640px) {
     #taskSection,
-    #task-list,
-    li {
+    #task li {
         border-width: 2px;
     }
 
