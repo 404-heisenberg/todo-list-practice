@@ -27,18 +27,23 @@
 }
 
 body {
-    height: 100vh;
-    margin: 0 auto;
-    padding: clamp(15px, 3em, 20px);
-    width: clamp(250px, 50%, 900px);
+    min-height: 100vh;
+    margin: 0;
     text-align: center;
+    padding: 16px;
     background-color: var(--bg-colour);
     color: var(--text-colour);
 }
 
+#content {
+    width: min(920px, 100%);
+    margin: 0 auto;
+    font-size: clamp(0.95rem, 1.8vw, 1.25rem);
+}
+
 h1 {
     font-family: "Lora", sans-serif;
-    font-size: clamp(32px, 3.5rem, 48px);
+    font-size: clamp(2rem, 4vw, 3rem);
     color: #001858;
 }
 
@@ -47,13 +52,13 @@ h1 {
 #task-form {
     display: flex;
     justify-content: center;
+    margin-bottom: 1.8em;
 }
 
 #taskSection {
+    width: 65%;
     display: flex;
     overflow: hidden;
-    width: 90%;
-    margin-bottom: 1em;
     border: 3px solid var(--border-colour);
     border-radius: 10px;
     box-shadow: 5px 6px var(--box-shadow-colour);
@@ -69,8 +74,8 @@ h1 {
 
 #task-input,
 #add-task-btn {
+    font-size: clamp(0.95rem, 1.8vw, 1.25rem);
     font-family: "Quicksand", sans;
-    font-size: clamp(16px, 1.25rem, 21px);
     font-weight: regular;
     border: none;
     background-color: var(--bg-colour);
@@ -106,6 +111,8 @@ li button:focus {
 /*Task List Section*/
 
 #task-list {
+    width: 65%;
+    margin: 0 auto;
     list-style: none;
     text-align: left;
     padding: 1em 2em;
@@ -117,8 +124,8 @@ li button:focus {
 
 li {
     user-select: none;
-    padding: 0.8em;
-    margin: 1.5em auto;
+    padding: clamp(0.65rem, 1.2vw, 0.9rem);
+    margin: clamp(1em, 1.5vw, 1.5em) auto;
     display: flex;
     gap: 10px;
     background-color: var(--bg-colour);
@@ -146,7 +153,6 @@ li.completed button {
 
 li span {
     font-family: "Quicksand", sans;
-    font-size: clamp(16px, 1.25rem, 21px);
     font-weight: regular;
 }
 
@@ -170,4 +176,23 @@ li button:hover {
 
 li .delete-btn {
     margin-left: auto;
+}
+
+@media (max-width: 640px) {
+    #taskSection,
+    #task-list,
+    li {
+        border-width: 2px;
+    }
+
+    #add-task-btn {
+        width: 100px;
+    }
+    #task-list {
+        padding: 0.8em 1em;
+    }
+    li {
+        margin: 0.9em 0;
+        padding: 0.7em;
+    }
 }
