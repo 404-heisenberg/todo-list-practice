@@ -125,6 +125,7 @@ li {
     border: 3px solid var(--border-colour);
     border-radius: 10px;
     box-shadow: 5px 6px var(--box-shadow-colour);
+    text-decoration: 0 line-through transparent;
     transition:
         box-shadow 220ms ease,
         transform 220ms ease,
@@ -140,6 +141,7 @@ li:hover {
 li.completed,
 li.completed button {
     background-color: var(--seconday-colour);
+    text-decoration: 2px line-through var(--text-colour);
 }
 
 li span {
