@@ -57,4 +57,5 @@ function renderTask() {
 
   taskList.appendChild(taskElement);
   taskInput.value = "";
+  taskInput.focus();
 }

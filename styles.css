@@ -76,7 +76,7 @@ h1 {
 #add-task-btn {
     font-size: clamp(0.95rem, 1.8vw, 1.25rem);
     font-family: "Quicksand", sans;
-    font-weight: regular;
+    font-weight: 400;
     border: none;
     background-color: var(--bg-colour);
     padding: 0.4em 0;
@@ -152,8 +152,8 @@ li.completed button {
 }
 
 li span {
-    font-family: "Quicksand", sans;
-    font-weight: regular;
+    font-family: "Quicksand", sans-serif;
+    font-weight: 400;
 }
 
 li img {
@@ -180,12 +180,23 @@ li .delete-btn {
 
 @media (max-width: 640px) {
     #taskSection,
-    #task li {
+    #task-list li {
         border-width: 2px;
     }
 
+    #task-section {
+        min-width: 280px;
+    }
+
+    #task-input {
+        flex: 0.7;
+        min-width: 125px;
+    }
+
     #add-task-btn {
-        width: 100px;
+        flex: 0.3;
+        width: auto;
+        min-width: 70px;
     }
     #task-list {
         padding: 0.8em 1em;
